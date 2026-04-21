@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class L1Q10{
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter temperature (in Fahrenheit): ");
+        double temperature = input.nextDouble();
+        System.out.print("Enter wind speed (in miles per hour): ");
+        double windSpeed = input.nextDouble();
+        double windChill = calculateWindChill(temperature, windSpeed);
+        System.out.println("The Wind Chill temperature is: " + windChill);
+    }
+    public static double calculateWindChill(double temperature, double windSpeed) {
+        double windChill = 35.74 + (0.6215 * temperature) + 
+                          (0.4275 * temperature - 35.75) * Math.pow(windSpeed, 0.16);
+        return windChill;
+    }
+}
